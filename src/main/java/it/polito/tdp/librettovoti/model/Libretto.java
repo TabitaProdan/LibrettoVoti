@@ -30,4 +30,49 @@ public class Libretto {
 		return s;
 	}
 	
+	//Punto 2 più possibilità
+	/*
+	public void stampaVotiUguali (int punteggio) {
+		//sitampa i voti sulla console 
+		//se io gli voglio sull'interfaccia fìgrafica da qui non lo posso farre		
+	}
+	
+	public String votiUguali (int punteggio) {
+		//sarà poi il chiamnte, che può essere un altra classe
+		//che li stampa sulla console 
+		//o l'interfaccia grafica 
+		//a stamparli
+		//però cosa devo stampare, il nome, la data ??
+		//il prossimo metodo risolve
+	}
+	*/
+	public List<Voto> votiUguali2 (int punteggio){
+		//unico problema è che espone all'esterno 
+		//la struttura dati interna
+		
+		//lo stesso ogggetto contenuto in due liste diverse
+		List<Voto> risultato = new ArrayList<>();
+		
+		for (Voto v : this.voti) {
+			if (v.getVoto()==punteggio) {
+				risultato.add(v);
+			}
+		}
+		return risultato;	
+	}
+	
+	
+	public Libretto votiUguali (int punteggio) {
+		//io ti restituisco il libretto e poi tu decidi cosa fartene
+		
+		Libretto ris = new Libretto ();
+		
+		for (Voto v : this.voti) {
+			if (v.getVoto()==punteggio) {
+				//ris.voti.add(v);
+				ris.add(v);
+			}
+		}
+		return ris;
+	}
 }

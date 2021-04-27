@@ -60,8 +60,7 @@ public class Libretto {
 		}
 		return risultato;	
 	}
-	
-	
+
 	public Libretto votiUguali (int punteggio) {
 		//io ti restituisco il libretto e poi tu decidi cosa fartene
 		
@@ -71,6 +70,18 @@ public class Libretto {
 			if (v.getVoto()==punteggio) {
 				//ris.voti.add(v);
 				ris.add(v);
+			}
+		}
+		return ris;
+	}
+	
+	public Voto ricercaCorso (String nomeCorso) {
+		Voto ris = null;
+		
+		for (Voto v : this.voti) {
+			if (v.getNomeCorso().equals(nomeCorso)) {
+				ris = v;
+				break;
 			}
 		}
 		return ris;
